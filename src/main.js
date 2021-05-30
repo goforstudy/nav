@@ -117,3 +117,12 @@ window.onbeforeunload = () => {
     window.localStorage.setItem("links", str)
 }
 
+$(document).on("keypress", (e) => {
+    const {key} = e;
+    for(let i = 0; i < hasMap.length; i++){
+        if(hasMap[i].logo.toLowerCase() === key.toLowerCase()){
+            window.open(hasMap[i].url);
+            break;
+        }
+    }
+})
